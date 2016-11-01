@@ -4,7 +4,7 @@ sudo: required
 
 env:
   global:
-  - PGPORT=5433
+  - PGPORT=5432
   - PGHOST=localhost
 
 services:
@@ -23,6 +23,6 @@ addons:
 before_script:
   - sudo cp /etc/postgresql/9.4/main/pg_hba.conf /etc/postgresql/9.5/main/pg_hba.conf
   - sudo /etc/init.d/postgresql restart
-  # - psql -c 'create database parse_server_postgres_adapter_test_database;' -U postgres
-  # - psql -c 'CREATE EXTENSION postgis;' -U postgres -d parse_server_postgres_adapter_test_database
-  # - psql -c 'CREATE EXTENSION postgis_topology;' -U postgres -d parse_server_postgres_adapter_test_database
+  - psql -c 'create database parse_server_postgres_adapter_test_database;' -U postgres -p PGPORT
+  - psql -c 'CREATE EXTENSION postgis;' -U postgres -d parse_server_postgres_adapter_test_database -p PGPORT
+  - psql -c 'CREATE EXTENSION postgis_topology;' -U postgres -d parse_server_postgres_adapter_test_database -p PGPORT
