@@ -2,12 +2,6 @@ language: go
 
 sudo: required
 
-env:
-  global:
-  - NODE_ENV=test
-  - PGPORT=5433
-  - PGHOST=localhost
-
 services:
   - postgresql
 
