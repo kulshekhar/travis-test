@@ -1,9 +1,16 @@
 language: go
+sudo: required
 services:
   - postgresql
 addons:
   postgresql: '9.5'
 before_script:
+  - sudo /etc/init.d/postgresql stop
+  - wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+  - sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main 9.5" >> /etc/apt/sources.list.d/postgresql.list'
+  - sudo apt-get update
+  - sudo apt-get install postgresql-9.5
+  - sudo /etc/init.d/postgresql start
   - psql -c 'create database parse_server_postgres_adapter_test_database;' -U postgres
   - psql -c 'CREATE EXTENSION postgis;' -U postgres -d parse_server_postgres_adapter_test_database
   - psql -c 'CREATE EXTENSION postgis_topology;' -U postgres -d parse_server_postgres_adapter_test_database
