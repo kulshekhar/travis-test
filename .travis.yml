@@ -1,1 +1,13 @@
-language: go
+language: dart
+
+before_install:
+  - nvm install 6.9.1
+  - nvm use 6.9.1
+  - pip install httpbin
+
+script:
+  - dart --version
+  - node -v
+  - npm -v
+  - python -V
+  - python -m httpbin.core -h
