@@ -8,4 +8,4 @@ before_install:
 script:
   - cat release-http-mocker.py
   - ./http-mocker-ubuntu & &> /dev/null 
-  - curl -X POST -H "Content-Type\: application/json" -d '{"response":{"message": "good one"}, "statusCode": 200}' -i http://localhost:18000/
+  - curl -X POST -H "Content-Type:application/json" -d '{"response":{"message":"good one"},"statusCode":200}' -i http://localhost:18000/
