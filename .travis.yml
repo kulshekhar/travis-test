@@ -1,8 +1,6 @@
 dist: trusty
 sudo: required
 services:
-  - postgresql
-  - redis-server
   - docker
 addons:
   postgresql: "9.5"
