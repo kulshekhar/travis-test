@@ -1,5 +1,5 @@
 dist: precise
-sudo: false
+sudo: required
 services:
   - postgresql
 addons:
