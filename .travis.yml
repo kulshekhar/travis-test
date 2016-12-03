@@ -1,6 +1,5 @@
 dist: trusty
 services:
-  - redis-server
   - docker
 addons:
   postgresql: "9.5"
