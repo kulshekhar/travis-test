@@ -1,4 +1,4 @@
-language: go
+language: node_js
 dist: trusty
 addons:
   postgresql: "9.5"
