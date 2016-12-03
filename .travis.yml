@@ -1,6 +1,7 @@
 dist: trusty
 services:
-  - docker
+  - postgresql
+  - redis-server
 addons:
   postgresql: "9.5"
 before_script:
