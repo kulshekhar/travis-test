@@ -3,6 +3,8 @@ services:
   - docker
 addons:
   postgresql: "9.5"
+  apt_packages:
+  - postgis
 before_script:
   - sudo /etc/init.d/docker stop
   - docker --version
