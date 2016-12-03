@@ -2,11 +2,6 @@ language: go
 
 sudo: required
 
-env:
-  global:
-  - PGPORT=5432
-  - PGHOST=localhost
-
 services:
   - postgresql
 
