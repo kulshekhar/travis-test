@@ -1,1 +1,3 @@
-language: go
+language: python
+script:
+  - ./script.sh
